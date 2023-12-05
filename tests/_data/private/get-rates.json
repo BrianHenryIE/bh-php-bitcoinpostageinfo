@@ -1,0 +1,42 @@
+[
+  {
+    "service": "usps_express",
+    "service_display": "Priority Mail Express",
+    "rate": "29.38",
+    "carrier": "usps",
+    "est_delivery_days": 1,
+    "currency": "USD"
+  },
+  {
+    "service": "usps_priority",
+    "service_display": "Priority Mail",
+    "rate": "9.35",
+    "carrier": "usps",
+    "est_delivery_days": 1,
+    "currency": "USD"
+  },
+  {
+    "service": "usps_first_class",
+    "service_display": "First Class Mail",
+    "rate": "5.40",
+    "carrier": "usps",
+    "est_delivery_days": 2,
+    "currency": "USD"
+  },
+  {
+    "service": "usps_ground_advantage",
+    "service_display": "Ground Advantage",
+    "rate": "5.40",
+    "carrier": "usps",
+    "est_delivery_days": 2,
+    "currency": "USD"
+  },
+  {
+    "service": "usps_media_mail",
+    "service_display": "Media Mail",
+    "rate": "4.63",
+    "carrier": "usps",
+    "est_delivery_days": 2,
+    "currency": "USD"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "service":"Express",
+    "service_display":"Express",
+    "rate":"28.88",
+    "carrier":"USPS",
+    "est_delivery_days":"1-2",
+    "currency":"USD"
+  },
+  {
+    "service":"GroundAdvantage",
+    "service_display":"GroundAdvantage",
+    "rate":"3.12",
+    "carrier":"USPS",
+    "est_delivery_days":3,
+    "currency":"USD"
+  },
+  {
+    "service":"MediaMail",
+    "service_display":"Media Mail",
+    "rate":"3.11",
+    "carrier":"USPS",
+    "est_delivery_days":6,
+    "currency":"USD"
+  },
+  {
+    "service":"ParcelSelect",
+    "service_display":"Parcel Select",
+    "rate":"8.48",
+    "carrier":"USPS",
+    "est_delivery_days":6,
+    "currency":"USD"
+  },
+  {
+    "service":"Priority",
+    "service_display":"Priority",
+    "rate":"8.64",
+    "carrier":"USPS",
+    "est_delivery_days":2,
+    "currency":"USD"
+  }
+]

@@ -1,0 +1,14 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - tests/_reports
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        # Because callApi() can return an object or array of objects it's not correctly determining the return type
+        - '#should return .* but returns array<.*>\|#'
+        # preg_match output array is being interpreted as a string array,
+        - '#Parameter \#1 \$caputured of class .*InsufficientCreditsException constructor expects array.*#'
+        - '#Method .*callApi\(\) should return array<T of object>\|T of object but returns array<.*#'

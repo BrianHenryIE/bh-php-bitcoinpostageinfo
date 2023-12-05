@@ -1,0 +1,87 @@
+{
+  "name": "brianhenryie/bh-php-bitcoinpostageinfo",
+  "description": "API for BitcoinPostage.info",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "BrianHenryIE",
+      "email": "brian@BrianHenry.ie"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "process-timeout": 0,
+    "sort-packages": true,
+    "allow-plugins": {
+      "cweagans/composer-patches": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    },
+    "platform": {
+      "php": "8.1"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "BrianHenryIE\\BitcoinPostageInfo\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BrianHenryIE\\BitcoinPostageInfo\\": ["tests/contract", "tests/unit"]
+    },
+    "files": [
+      "tests/ContractTestCase.php",
+      "tests/MockHttpTestCase.php"
+    ]
+  },
+  "require": {
+    "ext-json": "*",
+    "json-mapper/json-mapper": "*",
+    "php": ">=8.1",
+    "psr/http-client-implementation": "*",
+    "psr/http-factory-implementation": "*"
+  },
+  "require-dev": {
+    "brainmaestro/composer-git-hooks": "^2.8",
+    "cweagans/composer-patches": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "guzzlehttp/guzzle": "^7.4",
+    "jaschilz/php-coverage-badger": "^2.0",
+    "mockery/mockery": "^1.5",
+    "phpstan/extension-installer": "*",
+    "phpunit/phpcov": "*",
+    "psr-mock/http": "^1.0",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "patches": {
+    "jaschilz/php-coverage-badger": {
+      "Allow customising the text": "https://github.com/JASchilz/PHPCoverageBadge/pull/1.patch"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ],
+    "test-coverage": [
+      "phpunit --coverage-text --coverage-clover tests/_reports/clover.xml --coverage-html tests/_reports/html"
+    ],
+    "cs-fix": [
+      "phpcbf || true",
+      "@cs"
+    ],
+    "cs": [
+      "phpcs || true",
+      "phpstan analyse --memory-limit 1G"
+    ]
+  },
+  "extra": {
+    "hooks": {
+      "pre-commit": [
+        "updated_files=$( git status | grep 'modified:\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); phpcbf $(echo $updated_files); vendor/bin/phpcbf $(echo $updated_files);"
+      ]
+    }
+  }
+}
